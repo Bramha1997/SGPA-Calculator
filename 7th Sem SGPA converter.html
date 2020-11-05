@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Marks to SGPA Converter</title>
+<link rel = "icon" href = "https://i7.uihere.com/icons/141/10/571/conversion-bd472604fcd4c12f7ffecd625f61d928.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<style>
+
+html {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+body {
+    background: linear-gradient(-135deg, #feac5e, #c779d0, #4bc0c8);
+	overflow: hidden;
+}
+
+.label {
+	font-family: Times new roman;
+	font-weight: bold;
+	margin-top: 3px;
+}
+
+.sub1 {
+	margin-top: 2px;
+	padding: 2px 0 1px 5px;
+	border-radius: 5px;
+	outline: none;
+}
+
+.sub1:hover {
+	box-shadow: 3px 5px 15px 0 #00ff00, 3px 5px 50px 0 #feac5e;
+}
+
+.sub2 {
+	margin-top: -3px;
+	width: 70px;
+	font-family: time new roman;
+	font-weight: bold;
+	outline: none;
+	background: linear-gradient(-135deg, #feac5e, #c779d0, #4bc0c8);
+}
+
+.sub2:hover {
+	box-shadow: 3px 5px 15px 0 #00ff00, 3px 5px 50px 0 #feac5e;
+}
+
+#d {
+	margin-top: 3%;
+	/* margin-top: 5%; */
+    height: 420px;
+    width: 280px;
+    border: 2px solid gray;
+    border-radius: 3%;
+    box-shadow: 3px 3px 9px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(45deg, #feac5e, #c779d0, #4bc0c8);
+}
+
+#d:hover {
+	box-shadow: 5px 12px 16px 0 #00ff00, 5px 17px 50px 0 #feac5e;
+}
+  
+#result {
+    color: lime;
+    font-family: times new roman;
+}
+
+#d2 {
+    height: 560px;
+	/* height: 560px; */
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    display: none;
+	overflow: hidden;
+}
+
+#sign {
+    Font-family: times new roman;
+}
+</style>
+<script type="text/javascript">
+
+function cal() {
+    /* Subject-1 Marks */
+    var sub1 = document.getElementById("s1").value;
+    if (sub1 >= 90 && sub1 <= 100) {
+        sub1 = 10*4;
+    }
+    else if (sub1 >= 80 && sub1 <= 89) {
+        sub1 = 9*4;
+    }
+    else if (sub1 >= 70 && sub1 <= 79) {
+        sub1 = 8*4;
+    }
+    else if (sub1 >= 60 && sub1 <= 69) {
+        sub1 = 7*4;
+    }
+    else if (sub1 >= 50 && sub1 <= 59) {
+        sub1 = 6*4;
+    }
+    else if (sub1 >= 45 && sub1 <= 49) {
+        sub1 = 5*4;
+    }
+    else if (sub1 >= 40 && sub1 <= 44) {
+        sub1 = 4*4;
+    }
+    else if (sub1 >= 0 && sub1 <= 39) {
+        sub1 = 0*4;
+    }
+    
+    /* Subject-2 Marks */
+    var sub2 = document.getElementById("s2").value;
+    if (sub2 >= 90 && sub2 <= 100) {
+        sub2 = 10*4;
+    }
+    else if (sub2 >= 80 && sub2 <= 89) {
+        sub2 = 9*4;
+    }
+    else if (sub2 >= 70 && sub2 <= 79) {
+        sub2 = 8*4;
+    }
+    else if (sub2 >= 60 && sub2 <= 69) {
+        sub2 = 7*4;
+    }
+    else if (sub2 >= 50 && sub2 <= 59) {
+        sub2 = 6*4;
+    }
+    else if (sub2 >= 45 && sub2 <= 49) {
+        sub2 = 5*4;
+    }
+    else if (sub2 >= 40 && sub2 <= 44) {
+        sub2 = 4*4;
+    }
+    else if (sub2 >= 0 && sub2 <= 39) {
+        sub2 = 0*4;
+    }
+    
+    /* Subject-3 Marks */
+    var sub3 = document.getElementById("s3").value;
+    if (sub3 >= 90 && sub3 <= 100) {
+        sub3 = 10*4;
+    }
+    else if (sub3 >= 80 && sub3 <= 89) {
+        sub3 = 9*4;
+    }
+    else if (sub3 >= 70 && sub3 <= 79) {
+        sub3 = 8*4;
+    }
+    else if (sub3 >= 60 && sub3 <= 69) {
+        sub3 = 7*4;
+    }
+    else if (sub3 >= 50 && sub3 <= 59) {
+        sub3 = 6*4;
+    }
+    else if (sub3 >= 45 && sub3 <= 49) {
+        sub3 = 5*4;
+    }
+    else if (sub3 >= 40 && sub3 <= 44) {
+        sub3 = 4*4;
+    }
+    else if (sub3 >= 0 && sub3 <= 39) {
+        sub3 = 0*4;
+    }
+    
+    /* Elective_Subject-1 Marks */
+    var sub4 = document.getElementById("s4").value;
+    if (sub4 >= 90 && sub4 <= 100) {
+        sub4 = 10*3;
+    }
+    else if (sub4 >= 80 && sub4 <= 89) {
+        sub4 = 9*3;
+    }
+    else if (sub4 >= 70 && sub4 <= 79) {
+        sub4 = 8*3;
+    }
+    else if (sub4 >= 60 && sub4 <= 69) {
+        sub4 = 7*3;
+    }
+    else if (sub4 >= 50 && sub4 <= 59) {
+        sub4 = 6*3;
+    }
+    else if (sub4 >= 45 && sub4 <= 49) {
+        sub4 = 5*3;
+    }
+    else if (sub4 >= 40 && sub4 <= 44) {
+        sub4 = 4*3;
+    }
+    else if (sub4 >= 0 && sub4 <= 39) {
+        sub4 = 0*3;
+    }
+    
+    /* Elective_Subject-2 Marks */
+    var sub5 = document.getElementById("s5").value;
+    if (sub5 >= 90 && sub5 <= 100) {
+        sub5 = 10*3;
+    }
+    else if (sub5 >= 80 && sub5 <= 89) {
+        sub5 = 9*3;
+    }
+    else if (sub5 >= 70 && sub5 <= 79) {
+        sub5 = 8*3;
+    }
+    else if (sub5 >= 60 && sub5 <= 69) {
+        sub5 = 7*3;
+    }
+    else if (sub5 >= 50 && sub5 <= 59) {
+        sub5 = 6*3;
+    }
+    else if (sub5 >= 45 && sub5 <= 49) {
+        sub5 = 5*3;
+    }
+    else if (sub5 >= 40 && sub5 <= 44) {
+        sub5 = 4*3;
+    }
+    else if (sub5 >= 0 && sub5 <= 39) {
+        sub5 = 0*3;
+    }
+    
+    /* Lab-1 Marks */
+    var sub6 = document.getElementById("s6").value;
+    if (sub6 >= 90 && sub6 <= 100) {
+        sub6 = 10*2;
+    }
+    else if (sub6 >= 80 && sub6 <= 89) {
+        sub6 = 9*2;
+    }
+    else if (sub6 >= 70 && sub6 <= 79) {
+        sub6 = 8*2;
+    }
+    else if (sub6 >= 60 && sub6 <= 69) {
+        sub6 = 7*2;
+    }
+    else if (sub6 >= 50 && sub6 <= 59) {
+        sub6 = 6*2;
+    }
+    else if (sub6 >= 45 && sub6 <= 49) {
+        sub6 = 5*2;
+    }
+    else if (sub6 >= 40 && sub6 <= 44) {
+        sub6 = 4*2;
+    }
+    else if (sub6 >= 0 && sub6 <= 39) {
+        sub6 = 0*2;
+    }
+    
+    /* Lab-2 Marks */
+    var sub7 = document.getElementById("s7").value;
+    if (sub7 >= 90 && sub7 <= 100) {
+        sub7 = 10*2;
+    }
+    else if (sub7 >= 80 && sub7 <= 89) {
+        sub7 = 9*2;
+    }
+    else if (sub7 >= 70 && sub7 <= 79) {
+        sub7 = 8*2;
+    }
+    else if (sub7 >= 60 && sub7 <= 69) {
+        sub7 = 7*2;
+    }
+    else if (sub7 >= 50 && sub7 <= 59) {
+        sub7 = 6*2;
+    }
+    else if (sub7 >= 45 && sub7 <= 49) {
+        sub7 = 5*2;
+    }
+    else if (sub7 >= 40 && sub7 <= 44) {
+        sub7 = 4*2;
+    }
+    else if (sub7 >= 0 && sub7 <= 39) {
+        sub7 = 0*2;
+    }
+    
+    /* Project_Work_Phase-1 */
+    var sub8 = document.getElementById("s8").value;
+    if (sub8 >= 90 && sub8 <= 100) {
+        sub8 = 10*2;
+    }
+    else if (sub8 >= 80 && sub8 <= 89) {
+        sub8 = 9*2;
+    }
+    else if (sub8 >= 70 && sub8 <= 79) {
+        sub8 = 8*2;
+    }
+    else if (sub8 >= 60 && sub8 <= 69) {
+        sub8 = 7*2;
+    }
+    else if (sub8 >= 50 && sub8 <= 59) {
+        sub8 = 6*2;
+    }
+    else if (sub8 >= 45 && sub8 <= 49) {
+        sub8 = 5*2;
+    }
+    else if (sub8 >= 40 && sub8 <= 44) {
+        sub8 = 4*2;
+    }
+    else if (sub8 >= 0 && sub8 <= 39) {
+        sub8 = 0*2;
+    }      
+
+    var total = sub1 + sub2 + sub3 + sub4 + sub5 + sub6 + sub7 + sub8;
+    var sgpa = (total/24);
+    var per = (sgpa-0.75)*10;
+    document.getElementById("result").innerHTML = sgpa.toFixed(2) + " SGPA" +"<br />" +"And The Percentage is " + per.toFixed(2) +"%";
+    document.getElementById("d").style.display = "none";
+    document.getElementById("m").style.display = "none";
+    document.getElementById("d2").style.display = "flex";
+    return 0;
+}
+
+</script>
+</head>
+<body>
+<div id = "m">
+<h1 style="background-color:lime;font-family:times new roman"><marquee>-:Please Enter The Marks As Per Subject Code:-</marquee></h1></div>
+<center>
+<form action = "javascript:cal();">
+<div id = "d">
+<label class = "label">15**71 :&nbsp;&nbsp; <input type="number" id="s1" class="sub1" placeholder="Enter 15**71 marks" onkeyup="if(this.value &gt; 100||this.value &lt;=-1) this.value = null;" required></label><br/>
+<label class = "label">15**72 :&nbsp;&nbsp; <input type="number" id="s2" class="sub1" placeholder="Enter 15**72 marks" onkeyup="if(this.value &gt; 100||this.value &lt;=-1) this.value = null;" required></label><br/>
+<label class = "label">15**73 :&nbsp;&nbsp; <input type="number" id="s3" class="sub1" placeholder="Enter 15**73 marks" onkeyup="if(this.value &gt; 100||this.value &lt;=-1) this.value = null;" required></label><br/>
+<label class = "label">15**74*:&nbsp;&nbsp; <input type="number" id="s4" class="sub1" placeholder="Enter 15**74* marks" onkeyup="if(this.value &gt; 100||this.value &lt;=-1) this.value = null;" required></label><br/>
+<label class = "label">15**75*:&nbsp;&nbsp; <input type="number" id="s5" class="sub1" placeholder="Enter 15**75* marks" onkeyup="if(this.value &gt; 100||this.value &lt;=-1) this.value = null;" required></label><br/>
+<label class = "label">15**L76:&nbsp;&nbsp; <input type="number" id="s6" class="sub1" placeholder="Enter 15**L76 marks" onkeyup="if(this.value &gt; 100||this.value &lt;=-1) this.value = null;" required></label><br/>
+<label class = "label">15**L77:&nbsp;&nbsp; <input type="number" id="s7" class="sub1" placeholder="Enter 15**L77 marks" onkeyup="if(this.value &gt; 100||this.value &lt;=-1) this.value = null;" required></label><br/>
+<label class = "label">15**P78:&nbsp;&nbsp; <input type="number" id="s8" class="sub1" placeholder="Enter 15**P78 marks" onkeyup="if(this.value &gt; 100||this.value &lt;=-1) this.value = null;" required></label><br/>
+<center><input type="submit" class="sub2" value = "Calculate" align = "center"></center>
+</div>
+</form>
+<div id = "d2">
+<h1 id = "result"></h1>
+</div>
+</center>
+<br/>
+<br/>
+<h3 id ="sign" align="right">By:- Bramha(3BK)</h3>
+</body>
+</html>
